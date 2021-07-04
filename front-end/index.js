@@ -1,3 +1,5 @@
+//Link
+const link = "/phpinvisualStudioCode/chat-bot/";
 // arabic and english buttons
 const arabic = document.getElementById("arabic");
 const english = document.getElementById("english");
@@ -16,7 +18,9 @@ const left = document.getElementById("left");
 const right = document.getElementById("right");
 const backward = document.getElementById("backward");
 const image = document.getElementById("image");
-const imageLink = "/phpinvisualStudioCode/robot-control/images/";
+const imageLink = link + "images/";
+//caht bot
+//const chatBot = document.getElementById("chat-bot");
 
 // when submit form A (angles)
 function submitFormA(){
@@ -27,7 +31,7 @@ function submitFormA(){
     var motor5 = document.getElementById("m5").value;
     var motor6 = document.getElementById("m6").value;
     // stor in the database the angles
-    $.post("/phpinvisualStudioCode/robot-control/back-end/angles.php", {m1: motor1, m2: motor2, m3: motor3, m4: motor4, m5: motor5, m6: motor6}, function(data){
+    $.post(link + "back-end/angles.php", {m1: motor1, m2: motor2, m3: motor3, m4: motor4, m5: motor5, m6: motor6}, function(data){
         return confirm( data);
     });
 }
@@ -44,7 +48,7 @@ function submitFormB(){
         runValue.value = 0;
     }
     // stor in the database the angles
-    $.post("/phpinvisualStudioCode/robot-control/back-end/runAngles.php", {run: runVal}, function(data){
+    $.post(link + "back-end/runAngles.php", {run: runVal}, function(data){
             return confirm( data);
         });
 }
@@ -65,7 +69,7 @@ function submitMove( move ){
         }
     }
     // stor in the database the move
-    $.post("/phpinvisualStudioCode/robot-control/back-end/moves.php", {moves: move}, function(data){
+    $.post(link + "back-end/moves.php", {moves: move}, function(data){
         return confirm( data);
     });
 }
@@ -78,15 +82,17 @@ function submitRun(){
     if(action == "start"){
         image.src = imageLink + "start.png";
         run.title = "stop";
+        run.innerHTML = "stop";
         run.style.border = "3px solid red";
     } else{
         image.src = imageLink + "stop.gif";
         run.title = "start";
+        run.innerHTML = "start";
         run.style.border = "3px solid green";
     }
 
     // store in the database
-    $.post("/phpinvisualStudioCode/robot-control/back-end/runMoves.php", {run: action}, function(data){
+    $.post(link + "back-end/runMoves.php", {run: action}, function(data){
         return confirm( data);
     });
 }
@@ -159,6 +165,15 @@ function arLanguage(){
     //hide the (Engilsh) on the top of the page
     arabic.classList.remove("hidden");
     english.classList.add('hidden');
+
+    // change chat bot to arabic
+    destroy();
+    window.watsonAssistantChatOptions.integrationID = "ffa12f5d-16d9-4fda-9022-c8e8be0f9d70";
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+      document.head.appendChild(t);
+    });
 }
 
 //for english language
@@ -202,11 +217,20 @@ function enLanguage(){
 
     //hide the(arabic word) on the top of the page
     english.classList.remove("hidden");
-    arabic.classList.add("hidden")
+    arabic.classList.add("hidden");
+
+    // change chat bot to english
+    destroy();
+    window.watsonAssistantChatOptions.integrationID = "e8017b35-887b-4937-8a38-d806cdb4c9b1";
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+      document.head.appendChild(t);
+    });
 }
 
 //Check whether the arm has already moved or not
-fetch("/PHPinVisualStudioCode/robot-control/back-end/runAnglesInfo.php").then(
+fetch(link + "back-end/runAnglesInfo.php").then(
     function(response){
         return response.json();
     }
@@ -225,7 +249,7 @@ fetch("/PHPinVisualStudioCode/robot-control/back-end/runAnglesInfo.php").then(
 });
 
 //Check if the robot is already turned on or not
-fetch("/PHPinVisualStudioCode/robot-control/back-end/runMovesInfo.php").then(
+fetch(link + "back-end/runMovesInfo.php").then(
     function(response){
         return response.json();
     }
@@ -246,4 +270,23 @@ fetch("/PHPinVisualStudioCode/robot-control/back-end/runMovesInfo.php").then(
 })
 .catch(err => {
     console.error(err);
+});
+
+//Destroy
+function destroy(){
+    document.head.removeChild(document.head.lastChild);
+    document.body.removeChild(document.body.lastChild);
+}
+
+// Chat bot
+window.watsonAssistantChatOptions = {
+    integrationID: "e8017b35-887b-4937-8a38-d806cdb4c9b1", // The ID of this integration.
+    region: "eu-de", // The region your integration is hosted in.
+    serviceInstanceID: "933848e9-b27d-4be4-801c-31c65bf6d016", // The ID of your service instance.
+    onLoad: function(instance) { instance.render(); }
+  };
+setTimeout(function(){
+  const t=document.createElement('script');
+  t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+  document.head.appendChild(t);
 });
