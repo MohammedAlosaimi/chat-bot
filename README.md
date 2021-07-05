@@ -17,10 +17,12 @@
 
 <!-- ABSTRACT -->
 ## Abstract
+
 This is a repository on how to use IBM Watson and shows a chat bot specially designed for the robot control web page (check it <a href="https://github.com/MohammedAlosaimi/robot-control">here</a>). In this repository, a chat bot has been designed for both languages ​​(Arabic and English) in order to facilitate communication between the user and the chat bot.
 
 <!-- HOW TO USE IBM WATSON -->
 ## How to use IBM Watson
+
 To start using IBM Watson you need to create an <a href="https://www.ibm.com/cloud/watson-assistant?cm_sp=Scheduler-_-CopyChng2-_-C">IBM Watson</a> account by clicking on "get started free"(see figure 1), Or you can go directly to the registration page by clicking <a href="https://cloud.ibm.com/registration?target=/developer/watson/launch-tool/conversation&hideTours=true&cm_sp=WatsonPlatform-WatsonPlatform-_-OnPageNavCTA-IBMWatson_Conversation-_-Watson_Developer_Website&cm_mmca1=000027BD">here.</a> (figure 2)
 
 <p align="center">
@@ -125,7 +127,7 @@ To add an intent in dialog. You can add an intent to an existing node or create 
     </p>
 </p>
 
-Entity is another feature to list the similar words into a specific value. For instance, we will create an "Food" entity (figure 14). This entity contain two values ​​(Vegetable and Fruit). If the user enters cucumber or lettuce, the value will be vegetable, and if he enters an orange or apple, the value will be fruit (figure 15, 16, and 17). You can also use this entity in node.
+Entity is another feature to list the similar words into a specific value. For instance, we will create an "Food" entity (figure 14). This entity contain two values ​​(Vegetable and Fruit). If the user enters cucumber or lettuce, the value will be vegetable, and if he enters an orange or apple, the value will be fruit (figure 15, 16 & 17). You can also use this entity in node.
 
 <p align="center">
 <img src="images/foodEntity.png" alt="Food Entity" width="700">
@@ -187,15 +189,69 @@ You can download this assistant as a JSON file (figure 18), Or you can copy and 
 
 <!-- DESIGN -->
 ## Design
-sdsadsa
+
 
 <!-- INTENT & ENTITY -->
 ### Intent & Entity
-asdfd
+
+Both languages(Arabic & English) ​​have the same intents with a slight difference in the words expected from the user (figure 22 & 23).
+
+<p align="center">
+<img src="images/enIntent.png" alt="English Intent" width="700">
+    <p align="center">
+        figure 22: Emglish intent.
+    </p>
+</p>
+    <br>
+<p align="center">
+    <img src="images/arIntent.png" alt="Arabic Intent" width="700">
+    <p align="center">
+        figure 23: Arabic intent.
+    </p>
+</p>
+
+As for the dialog, every node has a special intent. You can see the dialog for both English and Arabic(figure 24 & 25).
+
+<p align="center">
+<img src="images/enDialog.png" alt="English Dialog" width="700">
+    <p align="center">
+        figure 24: Emglish dialog.
+    </p>
+</p>
+    <br>
+<p align="center">
+    <img src="images/arDialog.png" alt="Arabic Dialog" width="700">
+    <p align="center">
+        figure 25: Arabic dialog.
+    </p>
+</p>
 
 <!-- UI -->
 ### UI
-This p.
+
+This section displays the user interface of both languages(figure 26 & 27). You can change between the two languages ​​by clicking on one of the two languages ​​(Fig. 28)
+
+<p align="center">
+<img style="margin-right: 100px" src="images/enUI.png" alt="English UI" width="300">
+<img src="images/enUI2.png" alt="English UI" width="300">
+</p>
+<p align="center">
+    figure 26: English UI.
+</p>
+<br>
+<p align="center">
+<img style="margin-right: 100px" src="images/arUI.png" alt="Arabic UI" width="300">
+<img src="images/arUI2.png" alt="Arabic UI" width="300">
+</p>
+<p align="center">
+    figure 27: Arabic UI.
+</p>
+<br>
+<p align="center">
+    <img src="images/languageButton.png" alt="language button" width="200">
+    <br/>
+    figure 28: Language button
+</p>
 
 <!-- SCRIPT CODE -->
 ## Script Code
