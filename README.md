@@ -232,7 +232,7 @@ As for the dialog, every node has a special intent. You can see the dialog for b
 This section displays the user interface of both languages(figure 26 & 27). You can change between the two languages ​​by clicking on one of the two languages ​​(Fig. 28)
 
 <p align="center">
-<img style="margin-right: 100px" src="images/enUI.png" alt="English UI" width="300">
+<img src="images/enUI.png" alt="English UI" width="300">
 <img src="images/enUI2.png" alt="English UI" width="300">
 </p>
 <p align="center">
@@ -240,7 +240,7 @@ This section displays the user interface of both languages(figure 26 & 27). You 
 </p>
 <br>
 <p align="center">
-<img style="margin-right: 100px" src="images/arUI.png" alt="Arabic UI" width="300">
+<img src="images/arUI.png" alt="Arabic UI" width="300">
 <img src="images/arUI2.png" alt="Arabic UI" width="300">
 </p>
 <p align="center">
