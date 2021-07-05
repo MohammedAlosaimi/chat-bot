@@ -26,7 +26,7 @@ This is a repository on how to use IBM Watson and shows a chat bot specially des
 To start using IBM Watson you need to create an <a href="https://www.ibm.com/cloud/watson-assistant?cm_sp=Scheduler-_-CopyChng2-_-C">IBM Watson</a> account by clicking on "get started free"(see figure 1), Or you can go directly to the registration page by clicking <a href="https://cloud.ibm.com/registration?target=/developer/watson/launch-tool/conversation&hideTours=true&cm_sp=WatsonPlatform-WatsonPlatform-_-OnPageNavCTA-IBMWatson_Conversation-_-Watson_Developer_Website&cm_mmca1=000027BD">here.</a> (figure 2)
 
 <p align="center">
-<img src="images/IMBWatson.png" alt="IBM Watson" width="700">
+<img src="images/IBMWatson.png" alt="IBM Watson" width="700">
     <p align="center">
         figure 1: IBM Watson.
     </p>
