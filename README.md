@@ -255,4 +255,39 @@ This section displays the user interface of both languages(figure 26 & 27). You 
 
 <!-- SCRIPT CODE -->
 ## Script Code
-This
+
+This part shows the script code for both languages. The following code is for the chat bot in English. You can add it to your code and try it. 
+
+```html
+<script>
+  window.watsonAssistantChatOptions = {
+      integrationID: "e8017b35-887b-4937-8a38-d806cdb4c9b1", // The ID of this integration.
+      region: "eu-de", // The region your integration is hosted in.
+      serviceInstanceID: "933848e9-b27d-4be4-801c-31c65bf6d016", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
+</script>
+```
+
+The following code is for the chat bot in Arabic. You can add it to your code and try it.
+
+```html
+<script>
+  window.watsonAssistantChatOptions = {
+      integrationID: "ffa12f5d-16d9-4fda-9022-c8e8be0f9d70", // The ID of this integration.
+      region: "eu-de", // The region your integration is hosted in.
+      serviceInstanceID: "933848e9-b27d-4be4-801c-31c65bf6d016", // The ID of your service instance.
+      onLoad: function(instance) { instance.render(); }
+    };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+    document.head.appendChild(t);
+  });
+</script>
+```
